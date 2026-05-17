@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>North Jersey Dental Lab — Digital Excellence for Master Clinicians</title>
+<meta name="description" content="High-precision dental restorations with focus on passive fit and natural aesthetics. Zirconia, PFM, PFZ, e.max, All-on-X. Exclusively for dental professionals." />
+<link rel="icon" type="image/png" href="assets/njdl-logo.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --bg:#FFFFFF;
+  --bg-2:#F9F9F9;
+  --text:#1A1A1A;
+  --text-2:#5C5C5C;
+  --text-3:#9A9A9A;
+  --line:#E5E5E5;
+  --line-2:#D4D4D4;
+  --gold:#C9A35B;
+  --black:#0E0E0E;
+  --sans:'Inter','Manrope', system-ui, -apple-system, Segoe UI, sans-serif;
+  --display:'Manrope','Inter', system-ui, sans-serif;
+  --maxw:1280px;
+  --pad-x: clamp(20px, 5vw, 64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+body.no-scroll{overflow:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+button{font-family:inherit;cursor:pointer;border:0;background:0}
+
+h1,h2,h3,h4{font-family:var(--display);font-weight:800;letter-spacing:-.025em;line-height:1.04}
+.muted{color:var(--text-2)}
+.mono{letter-spacing:.18em;text-transform:uppercase;font-size:11px;font-weight:600;color:var(--text-2)}
+
+.container{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x)}
+section{padding:clamp(46px, 5vw, 70px) 0;position:relative}
+.tech,.services,.portfolio,.media,.contact{border-top:1px solid var(--line)}
+
+/* ---------- HEADER ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(140%) blur(16px);
+  -webkit-backdrop-filter:saturate(140%) blur(16px);
+  border-bottom:1px solid transparent;
+  transition:border-color .25s;
+}
+.nav.scrolled{border-color:var(--line)}
+.nav-inner{
+  max-width:var(--maxw);margin:0 auto;
+  padding:13px var(--pad-x);
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{
+  width:58px;height:58px;border-radius:10px;
+  background:#000;overflow:hidden;flex:none;
+  display:grid;place-items:center;
+}
+.brand-mark img{width:100%;height:100%;object-fit:contain;object-position:center;display:block}
+.brand-text{display:flex;flex-direction:column;line-height:1}
+.brand-text .a{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:-.015em}
+.brand-text .b{font-size:9px;color:var(--text-3);letter-spacing:.22em;text-transform:uppercase;margin-top:5px;font-weight:500}
+@media (max-width:760px){.brand-mark{width:48px;height:48px}.brand-text .a{font-size:14px}}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-size:13.5px;color:var(--text-2);font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-phone{font-size:13.5px;color:var(--text);font-weight:500}
+.btn-courier{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 18px;border-radius:0;
+  border:1px solid var(--text);color:var(--text);
+  font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  transition:background .2s, color .2s;
+}
+.btn-courier:hover{background:var(--text);color:#fff}
+@media (max-width:1080px){.nav-links{display:none}}
+@media (max-width:760px){.nav-phone{display:none}.brand-text .b{display:none}.btn-courier{padding:10px 14px}}
+
+/* ---------- BUTTONS ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:18px 30px;border-radius:0;
+  font-family:inherit;font-size:12px;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;
+  transition:transform .25s, background .2s, color .2s;
+}
+.btn-solid{background:var(--text);color:#fff}
+.btn-solid:hover{background:#000}
+.btn-solid .arr{transition:transform .3s}
+.btn-solid:hover .arr{transform:translateX(5px)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--text)}
+.btn-outline:hover{background:var(--text);color:#fff}
+
+/* ---------- HERO ---------- */
+.hero{
+  padding-top:112px;padding-bottom:46px;
+  display:flex;align-items:center;
+  position:relative;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.1fr .9fr;
+  gap:clamp(40px,6vw,90px);align-items:center;width:100%;
+}
+.hero-stack-tag{
+  display:inline-flex;align-items:center;gap:14px;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--text-2);font-weight:600;margin-bottom:32px;
+}
+.hero-stack-tag::before{content:"";width:30px;height:1px;background:var(--text-2)}
+.hero h1{
+  font-size:clamp(40px,5.6vw,72px);
+  letter-spacing:-.032em;
+  font-weight:800;
+  line-height:1.02;
+  margin-bottom:28px;
+}
+.hero h1 .accent{display:block}
+.hero .lead{
+  font-size:clamp(17px,1.3vw,20px);
+  color:var(--text-2);font-weight:400;
+  max-width:540px;margin-bottom:42px;line-height:1.5;
+}
+.hero-cta{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.hero-secondary{
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--text-2);font-weight:600;border-bottom:1px solid var(--line-2);padding-bottom:3px;
+  transition:color .2s, border-color .2s;cursor:pointer;
+}
+.hero-secondary:hover{color:var(--text);border-color:var(--text)}
+
+.hero-meta{
+  margin-top:38px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:520px;
+  border-top:1px solid var(--line);padding-top:24px;
+}
+.hero-meta .num{font-family:var(--display);font-size:30px;font-weight:800;color:var(--text);line-height:1;letter-spacing:-.02em}
+.hero-meta .lbl{font-size:11px;color:var(--text-3);margin-top:7px;letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+
+.hero-visual{
+  position:relative;aspect-ratio:1 / 1.08;
+  background:#0a0a0b;
+  overflow:hidden;
+}
+.hero-visual img{
+  width:100%;height:100%;object-fit:cover;
+}
+.hero-visual .corner-tag{
+  position:absolute;top:24px;left:24px;
+  font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;
+  color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6);
+}
+.hero-visual .corner-badge{
+  position:absolute;bottom:0;right:0;
+  display:flex;align-items:center;gap:9px;
+  font-family:var(--display);font-size:11px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;
+  background:#fff;color:var(--text);
+  padding:13px 18px;
+}
+.hero-visual .corner-badge svg{width:15px;height:15px;color:var(--gold);flex:none}
+
+@media (max-width:880px){
+  .hero{padding-top:96px}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-meta{max-width:none}
+}
+
+/* ---------- DIGITAL WORKFLOW ---------- */
+.tech{background:var(--bg)}
+.tech-head{text-align:center;margin-bottom:42px;max-width:720px;margin-left:auto;margin-right:auto}
+.tech-head h2{font-size:clamp(36px,4.4vw,56px);letter-spacing:-.03em}
+.tech-head .sub{margin-top:18px;color:var(--text-2);font-size:16px}
+.tech-logos{
+  display:grid;gap:0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.tech-logos-4{grid-template-columns:repeat(4,1fr)}
+.tech-logos .logo{
+  padding:42px 20px;text-align:center;
+  font-family:var(--display);font-size:16px;font-weight:700;letter-spacing:.06em;
+  color:var(--text-3);text-transform:uppercase;
+  border-right:1px solid var(--line);
+  transition:color .25s;
+  filter:grayscale(1);
+}
+.tech-logos .logo:last-child{border-right:0}
+.tech-logos .logo:hover{color:var(--text)}
+@media (max-width:760px){
+  .tech-logos-4{grid-template-columns:repeat(2,1fr)}
+  .tech-logos .logo{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)}
+  .tech-logos .logo:nth-child(2n){border-right:0!important}
+  .tech-logos .logo:nth-last-child(-n+2){border-bottom:0}
+}
+
+/* ---------- SERVICES ---------- */
+.services{background:var(--bg-2)}
+.services-head{margin-bottom:48px}
+.services-head h2{font-size:clamp(40px,4.8vw,60px);letter-spacing:-.03em}
+.svc-list{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+}
+.svc-row{
+  border:1px solid var(--line);background:var(--bg);
+  display:flex;flex-direction:column;
+  transition:border-color .25s;
+}
+.svc-row:hover{border-color:var(--line-2)}
+.svc-img{
+  aspect-ratio:16/11;background:#0a0a0b;overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+.svc-img img{width:100%;height:100%;object-fit:cover;transition:transform .9s ease}
+.svc-row:hover .svc-img img{transform:scale(1.04)}
+.svc-body{
+  padding:30px 30px 34px;display:flex;flex-direction:column;gap:16px;flex:1;
+}
+.svc-row .top{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.svc-row .num{font-family:var(--display);font-size:11px;color:var(--text-3);font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.svc-row .price{font-family:var(--display);font-size:16px;font-weight:700;color:var(--text);letter-spacing:-.005em}
+.svc-row .price em{font-style:normal;font-size:10px;color:var(--text-3);font-weight:500;margin-right:6px;letter-spacing:.04em;text-transform:uppercase}
+.svc-row h3{font-size:25px;font-weight:800;letter-spacing:-.025em;line-height:1.1}
+.svc-row .desc{font-size:14.5px;color:var(--text-2);line-height:1.6;margin-top:-2px}
+.svc-row .turnaround{
+  margin-top:auto;padding-top:18px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.svc-row .turnaround .lbl{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-3);font-weight:600}
+.svc-row .turnaround .val{font-family:var(--display);font-size:17px;font-weight:800;color:var(--text);letter-spacing:-.01em}
+.svc-row .arrow-link{
+  margin-top:18px;display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;
+  color:var(--text);transition:gap .25s;cursor:pointer;
+}
+.svc-row:hover .arrow-link{gap:14px}
+@media (max-width:980px){.svc-list{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){
+  .svc-list{grid-template-columns:1fr}
+  .svc-body{padding:26px 22px 30px}
+}
+
+/* ---------- PORTFOLIO / RECENT CASES ---------- */
+.portfolio{background:var(--bg)}
+.portfolio-head{margin-bottom:48px;display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.portfolio-head h2{font-size:clamp(40px,4.8vw,60px);letter-spacing:-.03em}
+.portfolio-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+}
+.pf{
+  position:relative;aspect-ratio:4/5;overflow:hidden;background:#0a0a0b;cursor:pointer;
+}
+.pf img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.pf:hover img{transform:scale(1.05)}
+.pf::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.85));
+  opacity:0;transition:opacity .35s;
+}
+.pf:hover::after{opacity:1}
+.pf .meta{
+  position:absolute;left:24px;right:24px;bottom:22px;color:#fff;z-index:2;
+  opacity:0;transform:translateY(10px);transition:all .35s;
+}
+.pf:hover .meta{opacity:1;transform:translateY(0)}
+.pf .meta .t{font-family:var(--display);font-size:18px;font-weight:700;letter-spacing:-.01em}
+.pf .meta .d{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:6px}
+@media (max-width:900px){.portfolio-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.portfolio-grid{grid-template-columns:1fr}}
+
+/* ---------- MEDIA & EXAMPLES ---------- */
+.media{background:var(--bg-2)}
+.media-head{margin-bottom:42px;display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.media-head h2{font-size:clamp(40px,4.8vw,60px);letter-spacing:-.03em}
+.media-head .sub{margin-top:12px;color:var(--text-2);font-size:15px;max-width:420px}
+.media-embed{
+  border:1px solid var(--line);background:var(--bg);min-height:540px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.media-embed iframe{width:100%;border:0;display:block}
+.media-placeholder{
+  text-align:center;padding:60px 30px;max-width:460px;
+}
+.media-placeholder .mono{display:block;margin-bottom:14px}
+.media-placeholder p{color:var(--text-2);font-size:14.5px;margin-bottom:26px;line-height:1.6}
+@media (max-width:760px){.media-embed{min-height:460px}}
+
+/* ---------- CONTACT ---------- */
+.contact{background:var(--bg)}
+.contact-head{margin-bottom:48px;max-width:760px}
+.contact-head h2{font-size:clamp(40px,4.8vw,60px);letter-spacing:-.03em}
+.contact-head p{margin-top:22px;color:var(--text-2);font-size:16px;max-width:520px}
+.contact-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border:1px solid var(--line);background:var(--bg);
+}
+.cc-card{
+  padding:50px 40px;border-right:1px solid var(--line);
+  display:flex;flex-direction:column;gap:18px;
+  transition:background .25s, transform .35s;
+  text-decoration:none;color:var(--text);
+}
+.cc-card:last-child{border-right:0}
+.cc-card:hover{background:var(--bg-2)}
+.cc-card.primary{background:var(--text);color:#fff}
+.cc-card.primary .mono{color:rgba(255,255,255,.65)}
+.cc-card.primary:hover{background:#000}
+.cc-card .cc-val{
+  font-family:var(--display);font-size:clamp(20px,2.2vw,28px);
+  font-weight:800;letter-spacing:-.025em;line-height:1.15;margin-top:2px;
+  word-break:break-word;
+}
+.cc-card .cc-foot{
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;
+  color:var(--text-3);margin-top:auto;padding-top:18px;
+}
+.cc-card.primary .cc-foot{color:rgba(255,255,255,.7)}
+@media (max-width:900px){
+  .contact-grid{grid-template-columns:1fr}
+  .cc-card{border-right:0;border-bottom:1px solid var(--line);padding:36px 30px}
+  .cc-card:last-child{border-bottom:0}
+  .cc-card.primary{border-color:var(--text)}
+}
+
+/* ---------- MODAL ---------- */
+.modal-overlay{
+  position:fixed;inset:0;z-index:100;
+  background:rgba(10,10,11,.62);
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;
+  padding:24px;
+  opacity:0;visibility:hidden;transition:opacity .3s, visibility .3s;
+}
+.modal-overlay.open{opacity:1;visibility:visible}
+.modal{
+  background:var(--bg);max-width:560px;width:100%;
+  max-height:90vh;overflow-y:auto;
+  padding:48px 48px 44px;position:relative;
+  transform:translateY(14px);transition:transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal-close{
+  position:absolute;top:20px;right:20px;
+  width:38px;height:38px;display:grid;place-items:center;
+  color:var(--text-2);font-size:24px;line-height:1;
+  border:1px solid var(--line);transition:all .2s;
+}
+.modal-close:hover{background:var(--text);color:#fff;border-color:var(--text)}
+.modal .mono{display:block;margin-bottom:14px}
+.modal h3{font-size:clamp(26px,3.4vw,34px);letter-spacing:-.03em;line-height:1.08;margin-bottom:16px}
+.modal p{color:var(--text-2);font-size:15px;line-height:1.6;margin-bottom:20px}
+.modal-email{
+  display:flex;flex-direction:column;gap:7px;align-items:center;width:100%;
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(18px,2.2vw,22px);letter-spacing:-.02em;color:var(--text);
+  border:1px dashed var(--line-2);padding:16px 18px;text-align:center;
+  margin-bottom:12px;transition:border-color .2s,background .2s;word-break:break-word;cursor:pointer;
+}
+.modal-email:hover{border-color:var(--text);background:var(--bg-2)}
+.modal-email .me-hint{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-3)}
+.modal-email.copied{border-color:var(--text);background:var(--text)}
+.modal-email.copied .me-addr,.modal-email.copied .me-hint{color:#fff}
+.modal-help{font-size:12.5px;color:var(--text-3);text-align:center;margin-bottom:24px;line-height:1.55}
+.modal-portals-label{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-3);font-weight:600;margin-bottom:12px}
+.modal-portals{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:26px}
+.modal-portals a{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:15px 18px;border:1px solid var(--line);
+  font-size:13.5px;font-weight:600;color:var(--text);
+  transition:background .2s,border-color .2s;
+}
+.modal-portals a:hover{background:var(--bg-2);border-color:var(--line-2)}
+.modal-portals a span{color:var(--text-3);font-size:14px}
+.modal-portals a:last-child:nth-child(odd){grid-column:1 / -1}
+.modal-divider{
+  text-align:center;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--text-3);font-weight:600;margin:4px 0 22px;position:relative;
+}
+.modal-divider::before,.modal-divider::after{
+  content:"";position:absolute;top:50%;width:42%;height:1px;background:var(--line);
+}
+.modal-divider::before{left:0}.modal-divider::after{right:0}
+.modal-mail-btn{width:100%;justify-content:center}
+@media (max-width:560px){
+  .modal{padding:40px 26px 34px}
+  .modal-portals{grid-template-columns:1fr}
+}
+
+/* ---------- FOOTER ---------- */
+.footer{padding:50px 0 56px;border-top:1px solid var(--line);background:var(--bg)}
+.footer-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.footer .col h4{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-3);font-weight:600;margin-bottom:14px;font-family:var(--sans)}
+.footer .col p, .footer .col a{font-size:14px;color:var(--text);line-height:1.55;display:block;transition:color .2s}
+.footer .col a:hover{color:var(--text-2)}
+.footer .col p + a, .footer .col a + a{margin-top:6px}
+.footer-bot{margin-top:50px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--text-3)}
+@media (max-width:760px){.footer-inner{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .8s, transform .8s}
+.reveal.in{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:.06s}
+.delay-2{transition-delay:.12s}
+.delay-3{transition-delay:.18s}
+.delay-4{transition-delay:.24s}
+
+::selection{background:var(--text);color:#fff}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:0}
+::-webkit-scrollbar-thumb:hover{background:var(--text)}
+</style>
+</head>
+
+<body>
+
+<!-- ============ HEADER ============ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="North Jersey Dental Lab">
+      <span class="brand-mark">
+        <img src="assets/njdl-logo.png" alt="North Jersey Dental Lab" />
+      </span>
+      <span class="brand-text">
+        <span class="a">North Jersey Dental Lab</span>
+        <span class="b">Ringwood, NJ</span>
+      </span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#tech">Digital</a>
+      <a href="#media">Media</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="tel:+19738312080" class="nav-phone">(973) 831-2080</a>
+      <button type="button" class="btn-courier js-open-case">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:2px"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+        Send a Case
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-stack-tag reveal">Exclusively for Dental Professionals</div>
+        <h1 class="reveal delay-1">
+          <span class="accent">Digital Excellence</span>
+          <span class="accent">for Master Clinicians.</span>
+        </h1>
+        <p class="lead reveal delay-2">
+          High-precision restorations with a focus on passive fit and natural aesthetics.
+        </p>
+        <div class="hero-cta reveal delay-3">
+          <button type="button" class="btn btn-solid js-open-case">Send a case <span class="arr">→</span></button>
+          <a href="#portfolio" class="hero-secondary">View cases</a>
+        </div>
+
+        <div class="hero-meta reveal delay-4">
+          <div><div class="num">20+</div><div class="lbl">Years of experience</div></div>
+          <div><div class="num">Top 3</div><div class="lbl">Passaic County · 2025</div></div>
+          <div><div class="num">0</div><div class="lbl">Compromises on quality</div></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal delay-2">
+        <img src="assets/njdl-hero-milling.png"
+             alt="5-axis dental milling machine — precision cut">
+        <span class="corner-tag">5-axis · CAD / CAM</span>
+        <span class="corner-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.7l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 15.7 6.6 18.6l1-6.1L3.2 8.2l6.1-.9z"/></svg>
+          Top 3 · Passaic Co.
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ DIGITAL WORKFLOW ============ -->
+<section class="tech" id="tech">
+  <div class="container">
+    <div class="tech-head">
+      <span class="mono reveal">— 01 / Digital Workflow</span>
+      <h2 class="reveal delay-1" style="margin-top:14px">Integrated Digital Workflow</h2>
+      <p class="sub reveal delay-2">We accept intraoral scans from all major systems. Pure digital precision — from scan to final restoration.</p>
+    </div>
+
+    <div class="tech-logos tech-logos-4 reveal">
+      <div class="logo">iTero</div>
+      <div class="logo">Medit</div>
+      <div class="logo">3Shape</div>
+      <div class="logo">Carestream</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-head">
+      <span class="mono reveal">— 02 / Services &amp; Turnaround</span>
+      <h2 class="reveal delay-1" style="margin-top:14px">Fixed prosthetics.<br>Engineered, hand-finished.</h2>
+    </div>
+
+    <div class="svc-list">
+      <div class="svc-row reveal">
+        <div class="svc-img"><img src="assets/njdl-svc-zirconia.png" alt="Monolithic zirconia crown"></div>
+        <div class="svc-body">
+          <div class="top">
+            <span class="num">01 · Zirconia</span>
+            <span class="price"><em>from</em>$XXX</span>
+          </div>
+          <h3>Zirconia Solutions</h3>
+          <p class="desc">Multi-layered translucency (45%+). Strength up to 1200 MPa. Ideal for monolithic crowns and bridges.</p>
+          <div class="turnaround">
+            <span class="lbl">Turnaround</span>
+            <span class="val">5–7 Days</span>
+          </div>
+          <button type="button" class="arrow-link js-open-case">Order <span>→</span></button>
+        </div>
+      </div>
+
+      <div class="svc-row reveal delay-1">
+        <div class="svc-img"><img src="assets/njdl-svc-pfm.png" alt="Porcelain fused to metal crown"></div>
+        <div class="svc-body">
+          <div class="top">
+            <span class="num">02 · PFM</span>
+            <span class="price"><em>from</em>$XXX</span>
+          </div>
+          <h3>PFM Restorations</h3>
+          <p class="desc">Porcelain fused to noble / high-noble metal. Proven 30-year track record for crowns and long-span bridges.</p>
+          <div class="turnaround">
+            <span class="lbl">Turnaround</span>
+            <span class="val">5–7 Days</span>
+          </div>
+          <button type="button" class="arrow-link js-open-case">Order <span>→</span></button>
+        </div>
+      </div>
+
+      <div class="svc-row reveal delay-2">
+        <div class="svc-img"><img src="assets/njdl-svc-pfz.png" alt="Porcelain fused to zirconia crown"></div>
+        <div class="svc-body">
+          <div class="top">
+            <span class="num">03 · PFZ</span>
+            <span class="price"><em>from</em>$XXX</span>
+          </div>
+          <h3>PFZ Restorations</h3>
+          <p class="desc">Porcelain hand-layered over a zirconia coping. Zirconia strength with custom anterior characterization.</p>
+          <div class="turnaround">
+            <span class="lbl">Turnaround</span>
+            <span class="val">5–7 Days</span>
+          </div>
+          <button type="button" class="arrow-link js-open-case">Order <span>→</span></button>
+        </div>
+      </div>
+
+      <div class="svc-row reveal">
+        <div class="svc-img"><img src="assets/njdl-svc-veneers.png" alt="Lithium disilicate e.max veneers"></div>
+        <div class="svc-body">
+          <div class="top">
+            <span class="num">04 · Esthetics</span>
+            <span class="price"><em>from</em>$XXX</span>
+          </div>
+          <h3>Esthetic Ceramic</h3>
+          <p class="desc">Lithium Disilicate (e.max®). Minimal-prep veneers and inlays. Hand-layered for superior optical properties.</p>
+          <div class="turnaround">
+            <span class="lbl">Turnaround</span>
+            <span class="val">5–7 Days</span>
+          </div>
+          <button type="button" class="arrow-link js-open-case">Order <span>→</span></button>
+        </div>
+      </div>
+
+      <div class="svc-row reveal delay-1">
+        <div class="svc-img"><img src="assets/njdl-svc-allonx.png" alt="All-on-X full arch zirconia hybrid"></div>
+        <div class="svc-body">
+          <div class="top">
+            <span class="num">05 · Implants</span>
+            <span class="price">Individual quote</span>
+          </div>
+          <h3>Implant Prosthetics</h3>
+          <p class="desc">Custom abutments (Titanium / Zirconia). All-on-X full-arch restorations. Compatible with all major implant systems.</p>
+          <div class="turnaround">
+            <span class="lbl">Turnaround</span>
+            <span class="val">Various</span>
+          </div>
+          <button type="button" class="arrow-link js-open-case">Discuss case <span>→</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECENT CASES ============ -->
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="portfolio-head">
+      <div>
+        <span class="mono reveal">— 03 / Recent Cases</span>
+        <h2 class="reveal delay-1" style="margin-top:14px">Recent Cases</h2>
+      </div>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="pf reveal">
+        <img src="assets/njdl-svc-zirconia.png" alt="Zirconia crown">
+        <div class="meta"><div class="t">Monolithic zirconia crown</div><div class="d">Turnaround · 5–7 days</div></div>
+      </div>
+      <div class="pf reveal delay-1">
+        <img src="assets/njdl-svc-veneers.png" alt="E.max veneers">
+        <div class="meta"><div class="t">E.max veneers · 4 units</div><div class="d">Turnaround · 5–7 days</div></div>
+      </div>
+      <div class="pf reveal delay-2">
+        <img src="assets/njdl-svc-allonx.png" alt="All-on-X full arch">
+        <div class="meta"><div class="t">All-on-6 · zirconia hybrid</div><div class="d">Turnaround · various</div></div>
+      </div>
+      <div class="pf reveal">
+        <img src="assets/njdl-port-microscope.png" alt="Microscope quality control">
+        <div class="meta"><div class="t">Microscope quality control</div><div class="d">Margin verification · every case</div></div>
+      </div>
+      <div class="pf reveal delay-1">
+        <img src="assets/njdl-port-macro.png" alt="Material macro — translucency">
+        <div class="meta"><div class="t">Material macro</div><div class="d">Enamel-grade translucency</div></div>
+      </div>
+      <div class="pf reveal delay-2">
+        <img src="assets/njdl-port-scan.png" alt="Digital scan — CAD design">
+        <div class="meta"><div class="t">Digital design · CAD / CAM</div><div class="d">iTero · Trios · Medit</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEDIA & EXAMPLES ============ -->
+<section class="media" id="media">
+  <div class="container">
+    <div class="media-head">
+      <div>
+        <span class="mono reveal">— 04 / Media &amp; Examples</span>
+        <h2 class="reveal delay-1" style="margin-top:14px">Media &amp; Examples</h2>
+      </div>
+      <p class="sub reveal delay-2">Daily cases straight from the bench. Live on Instagram.</p>
+    </div>
+
+    <div class="media-embed reveal">
+      <!-- ============================================================
+           LIGHTWIDGET / BEHOLD EMBED GOES HERE
+           Replace the .media-placeholder block below with the iframe
+           the widget service generates, e.g.:
+           <iframe src="//lightwidget.com/widgets/XXXXXXXX.html"
+                   scrolling="no" allowtransparency="true"
+                   style="width:100%;border:0;overflow:hidden;"></iframe>
+      ============================================================ -->
+      <div class="media-placeholder">
+        <span class="mono">Instagram · @northjerseydentallab</span>
+        <p>Live feed connects here once the LightWidget / Behold widget ID is added. Until then —</p>
+        <a class="btn btn-solid" href="https://www.instagram.com/northjerseydentallab" target="_blank" rel="noopener">View on Instagram <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-head">
+      <span class="mono reveal">— 05 / Get in touch</span>
+      <h2 class="reveal delay-1" style="margin-top:14px">Start a case.<br>Talk to the lab.</h2>
+      <p class="reveal delay-2">Direct contact only. No forms, no middlemen.</p>
+    </div>
+
+    <div class="contact-grid">
+      <a class="cc-card reveal" href="tel:+19738312080">
+        <span class="mono">Call</span>
+        <div class="cc-val">(973) 831-2080</div>
+        <span class="cc-foot">Mon–Fri · 9 AM – 6 PM EST →</span>
+      </a>
+
+      <a class="cc-card primary reveal delay-1" href="https://mail.google.com/mail/?view=cm&fs=1&to=northjerseylab@gmail.com&su=New%20case%20-%20North%20Jersey%20Dental%20Lab" target="_blank" rel="noopener">
+        <span class="mono">Email</span>
+        <div class="cc-val">northjerseylab@gmail.com</div>
+        <span class="cc-foot">Opens a ready email — just type &amp; send →</span>
+      </a>
+
+      <a class="cc-card reveal delay-2" href="https://maps.app.goo.gl/RpYJTpqqMbc5YY7Q7" target="_blank" rel="noopener">
+        <span class="mono">Visit</span>
+        <div class="cc-val">10 Greenwood Lake Tpke<br>Ringwood, NJ 07456</div>
+        <span class="cc-foot">Open in Google Maps →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="col">
+        <h4>Contact</h4>
+        <a href="tel:+19738312080">(973) 831-2080</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=northjerseylab@gmail.com&su=New%20case%20-%20North%20Jersey%20Dental%20Lab" target="_blank" rel="noopener">northjerseylab@gmail.com</a>
+      </div>
+      <div class="col">
+        <h4>Address</h4>
+        <a href="https://maps.app.goo.gl/RpYJTpqqMbc5YY7Q7" target="_blank" rel="noopener">10 Greenwood Lake Tpke<br>Ringwood, NJ 07456</a>
+      </div>
+      <div class="col">
+        <h4>Services</h4>
+        <a href="#services">Zirconia</a>
+        <a href="#services">PFM · PFZ</a>
+        <a href="#services">Esthetic Ceramic</a>
+        <a href="#services">Implant Prosthetics</a>
+      </div>
+      <div class="col">
+        <h4>Workflow</h4>
+        <a href="#tech">Digital protocol</a>
+        <a href="#media">Media &amp; Examples</a>
+        <a href="#portfolio">Recent cases</a>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <div>© 2026 North Jersey Dental Lab</div>
+      <div>Top 3 Dental Lab · Passaic County · Google Reviews 2025</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ SEND A CASE MODAL ============ -->
+<div class="modal-overlay" id="caseModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
+    <button type="button" class="modal-close js-close-case" aria-label="Close">&times;</button>
+    <span class="mono">Send a case</span>
+    <h3 id="cmTitle">Find us on every major platform</h3>
+    <p>Connect with our lab through your scanner's portal — add us by this email:</p>
+    <button type="button" class="modal-email js-copy-email" data-email="northjerseylab@gmail.com">
+      <span class="me-addr">northjerseylab@gmail.com</span>
+      <span class="me-hint">Click to copy</span>
+    </button>
+    <div class="modal-help">Inside iTero / Medit / 3Shape open “Add lab / recipient” and paste this address. Or send a direct email below.</div>
+    <div class="modal-portals-label">Open your scanner portal</div>
+    <div class="modal-portals">
+      <a href="https://myitero.com/" target="_blank" rel="noopener">iTero <span>↗</span></a>
+      <a href="https://www.medit.com/" target="_blank" rel="noopener">Medit <span>↗</span></a>
+      <a href="https://dexis.com/" target="_blank" rel="noopener">Dexis <span>↗</span></a>
+      <a href="https://portal.3shapecommunicate.com/" target="_blank" rel="noopener">3Shape Communicate <span>↗</span></a>
+      <a href="https://www.carestreamdental.com/" target="_blank" rel="noopener">Carestream <span>↗</span></a>
+    </div>
+    <div class="modal-divider">or</div>
+    <a class="btn btn-solid modal-mail-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=northjerseylab@gmail.com&su=New%20case%20-%20STL%20attached" target="_blank" rel="noopener">Send a direct email with the STL file <span class="arr">→</span></a>
+  </div>
+</div>
+
+<script>
+const nav = document.getElementById('nav');
+const onScroll = () => {
+  if (window.scrollY > 20) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+};
+window.addEventListener('scroll', onScroll, { passive:true });
+onScroll();
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ----- Send a case modal ----- */
+const modal = document.getElementById('caseModal');
+const openModal = (e) => { if(e) e.preventDefault(); modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('no-scroll'); };
+const closeModal = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('no-scroll'); };
+document.querySelectorAll('.js-open-case').forEach(b => b.addEventListener('click', openModal));
+document.querySelectorAll('.js-close-case').forEach(b => b.addEventListener('click', closeModal));
+
+/* ----- Copy lab email to clipboard ----- */
+document.querySelectorAll('.js-copy-email').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const email = btn.getAttribute('data-email');
+    try { await navigator.clipboard.writeText(email); }
+    catch (e) {
+      const t = document.createElement('textarea');
+      t.value = email; t.style.position = 'fixed'; t.style.opacity = '0';
+      document.body.appendChild(t); t.select();
+      try { document.execCommand('copy'); } catch (_) {}
+      t.remove();
+    }
+    const hint = btn.querySelector('.me-hint');
+    if (btn.classList.contains('copied')) return;
+    const prev = hint.textContent;
+    btn.classList.add('copied');
+    hint.textContent = 'Copied ✓';
+    setTimeout(() => { btn.classList.remove('copied'); hint.textContent = prev; }, 2000);
+  });
+});
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+</script>
+</body>
+</html>
